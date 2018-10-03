@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+
+import sys
+
+def main():
+    n = int(raw_input())
+    points = [map(int, raw_input().split()) for _ in xrange(n)]
+
+    result = []
+
+    # your code
+
+    print "\n".join(map(lambda x: '{} {}'.format(x[0], x[1]), result)
+
+
+if __name__ == '__main__':
+    main()

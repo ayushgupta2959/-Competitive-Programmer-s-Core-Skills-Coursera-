@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+
+import sys
+
+def main():
+    n = int(raw_input())
+    a = map(int, raw_input().split())
+
+    result = []
+
+    # your code
+
+    print " ".join(map(str, result))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+import sys
+
+def main():
+    s = raw_input()
+    q = int(raw_input())
+    a = [map(int, raw_input().split()) for _ in xrange(q)]
+
+    result = []
+
+    # your code
+
+    print "\n".join(result)
+
+
+if __name__ == '__main__':
+    main()

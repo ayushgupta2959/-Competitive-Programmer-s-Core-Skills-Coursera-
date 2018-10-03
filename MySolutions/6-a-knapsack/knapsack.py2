@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+import sys
+
+def main():
+    n, w = map(int, raw_input().split())
+    items = [map(int, raw_input().split()) for _ in xrange(n)]
+
+    result = []
+
+    # your code
+
+    print len(result)
+    print " ".join(map(str, result))
+
+
+if __name__ == '__main__':
+    main()

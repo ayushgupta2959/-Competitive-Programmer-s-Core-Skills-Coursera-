@@ -1,1 +1,2 @@
- 
+SUM(A)<SUM(B)
+SUM(A)>SUM(B)

@@ -1,54 +1,51 @@
 using namespace std;
 #include <bits/stdc++.h>
-int n;
-vector<double> a(n), b(n);
-void read_vector(){
+double a[100], b[100];
+void read_vector(int n){
+	double x;
     for (int i = 0; i < n; ++i)
         cin >> a[i];
     for (int i = 0; i < n; ++i)
         cin >> b[i];
+}
+void print_vector(int n){
+    for (int i = 0; i < n; ++i){
+        cout<<a[i]<<" ";
+    }
+    cout<<"\n";
+    for (int i = 0; i < n; ++i){
+        cout<<b[i]<<" ";
+    }
+    cout<<"\n";
+}
+void print_result(double x,double y,double error){
+	if (abs(x-y)<error)
+        cout << "SUM(A)=SUM(B)" << "\n";
+    else if (x>y+error)
+        cout << "SUM(A)>SUM(B)" << "\n";
+    else
+        cout << "SUM(A)<SUM(B)" << "\n";
 }
 int main(){
-    #ifndef ONLINE_JUDGE
-    freopen("../../input.txt", "r", stdin);
-    freopen("../../output.txt", "w", stdout);
-    #endif
-    ios_base::sync_with_stdio(false);
+	/*	#ifndef ONLINE_JUDGE
+	   	freopen("testInput.txt", "r", stdin);
+	    freopen("testOutput.txt", "w", stdout);
+		#endif
+    */
+	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    while(cin >> n){
-        read_vector();
-
-    }
-    return 0;
-}
-#include <iostream>
-#include <vector>
-
-using std::cin;
-using std::cout;
-using std::endl;
-using std::vector;
-
-int main() {
+    double sum_a;
+    double sum_b;
     int n;
-    cin >> n;
-    vector<double> a(n), b(n);
-    for (int i = 0; i < n; ++i)
-        cin >> a[i];
-    for (int i = 0; i < n; ++i)
-        cin >> b[i];
-
-    bool equal_sum = false;
-    bool sum_a_larger = false;
-    // your code
-
-    if (equal_sum)
-        cout << "SUM(A)=SUM(B)" << endl;
-    else
-        if (sum_a_larger)
-            cout << "SUM(A)>SUM(B)" << endl;
-        else
-            cout << "SUM(A)<SUM(B)" << endl;
-
+    double error;
+    while(cin >> n){
+        read_vector(n);
+    //  print_vector(n);
+        sum_a = accumulate(a,a+n,0.0);
+        sum_b = accumulate(b,b+n,0.0);
+        error = (double)n/(200000.0);
+    //  cout<<setprecision(15)<<sum_a<<" "<<sum_b<<" "<<error<<"\n";
+        print_result(sum_a,sum_b,error);
+    }
     return 0;
 }
